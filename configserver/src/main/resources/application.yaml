@@ -1,0 +1,20 @@
+server:
+  address: localhost
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ranjitburgute/SpringConfig
+        clone-on-start: true
+        username: ranjitburgute
+        ## change password github -> developer setting -> generate new token
+        ## curl http://localhost:8888/user/dev | jq
+        password: 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
+

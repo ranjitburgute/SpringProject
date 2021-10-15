@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="account" target="11" />
+      <module name="account.main" target="11" />
+      <module name="account.test" target="11" />
+      <module name="apigateway" target="11" />
+      <module name="apigateway.main" target="11" />
+      <module name="apigateway.test" target="11" />
+      <module name="configserver" target="11" />
+      <module name="configserver.main" target="11" />
+      <module name="configserver.test" target="11" />
+      <module name="user" target="11" />
+      <module name="user.main" target="11" />
+      <module name="user.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
