@@ -13,13 +13,10 @@ public class AccountController {
 
     private static final Logger log = LoggerFactory.getLogger(AccountController.class);
 
-    @Value("${spring.cloud.sever.test}")
-    String profile;
-
     @GetMapping("/status")
     public String getStatus(){
         log.info("Account service status endpoint");
-        return "Account service is started with: " + profile;
+        return "Account service is started ...";
     }
 
 }

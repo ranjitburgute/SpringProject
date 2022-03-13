@@ -1,0 +1,51 @@
+## docker-compose up --build
+## docker-compose down
+
+version: '3.8'
+services:
+    config-server:
+        build: ./configserver
+        image: config-server:latest 
+        ports:
+            - "8888:8888"
+    eureka-server:
+        build: ./eurekaserver
+        image: eureka-server:latest
+        environment:
+            spring.application.profiles.active: docker 
+        ports:
+            - "8761:8761"
+        depends_on:
+            - config-server
+    api-gateway:
+        build: ./apigateway
+        image: api-gateway:latest
+        environment:
+            spring.application.profiles.active: docker 
+        ports:
+            - "8081:8081"
+        depends_on:
+            - config-server
+            - eureka-server
+    user:
+        build: ./user
+        image: user:latest
+        environment:
+            spring.application.profiles.active: docker 
+        ports:
+            - "8082:8082"
+        depends_on:
+            - config-server
+            - eureka-server
+            - api-gateway
+    account:
+        build: ./account
+        image: account:latest
+        environment:
+            spring.application.profiles.active: docker 
+        ports:
+            - "8083:8083"
+        depends_on:
+            - config-server
+            - eureka-server
+            - api-gateway

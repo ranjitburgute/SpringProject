@@ -13,13 +13,10 @@ public class UserController {
 
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
-    @Value("${spring.cloud.sever.test}")
-    String profile;
-
     @GetMapping("/status")
     public String getStatus(){
 
         log.info("User service status endpoint");
-        return "User service started with: " + profile;
+        return "User service started ...";
     }
 }
