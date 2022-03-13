@@ -16,3 +16,12 @@ spring:
     active: dev 
   config:
     import: optional:configserver:http://localhost:8888
+
+management:
+  server:
+    address: localhost
+    port: 8092
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
